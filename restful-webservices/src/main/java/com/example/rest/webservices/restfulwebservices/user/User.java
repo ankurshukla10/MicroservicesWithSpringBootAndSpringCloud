@@ -1,10 +1,15 @@
 package com.example.rest.webservices.restfulwebservices.user;
 
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 public class User {
     private int id;
+
+    @Size(min = 2, message = "Name should have min. 2 characters")
     private String name;
+    @Past
     private Date birthdate;
 
     public User(int id, String name, Date birthdate) {
